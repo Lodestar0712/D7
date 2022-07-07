@@ -1,0 +1,22 @@
+{% extends 'flatpages/default.html' %}
+{% load custom_filters %}
+{% load custom_tags %}
+
+{% block title %}
+New
+{% endblock title %}
+
+{% block content %}
+    <table>
+            <tr>
+                <td>Название</td>
+                 <td>Дата создания</td>
+            <td>Описание</td>
+        </tr>
+    <tr>
+        <td>{{ New.title|truncatechars:20|censor }}</td>
+        <td>{{ New.dateCreation|date:'d M Y' }}</td>
+        <td>{{ New.text }}</td>
+    </tr>
+</table>
+{% endblock content %}
